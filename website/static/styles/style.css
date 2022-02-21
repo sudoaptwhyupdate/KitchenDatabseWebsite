@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  padding: 45px;
+  display: grid;
+  place-items: center;
+}
+
+ul {
+  padding: 0;
+}
