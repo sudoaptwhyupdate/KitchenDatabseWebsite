@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kitchen Datbase | {% block title %}{% endblock %}</title>
+
+    <!-- main css -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+  </head>
+  <body>
+    <nav>
+      <h1>Kitchen <span class="highlight">Database</span></h1>
+      <ul>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+        <li>
+          <a href="/what_you_have">What you have</a>
+        </li>
+
+        {% else %}
+        <li>
+          <a href="/login">Login</a>
+        </li>
+        <li>
+          <a href="/sign_up">Sign Up</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      {% if category == 'error' %}
+        <div class="error_banner" role="alert">
+          <div class="bannerMessgae">
+            {{ message }}
+          </div> 
+        </div>
+        {% else %}
+        <div class="success_banner" role="alert">
+          <div class="bannerMessgae">
+            {{ message }}
+          </div> 
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='index.js') }}"
+  ></script>
+  </body>
+</html>
