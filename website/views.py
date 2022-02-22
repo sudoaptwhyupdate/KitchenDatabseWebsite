@@ -22,8 +22,6 @@ def what_you_have():
         
       if len(item) < 1:
         flash("You need to enter an item...", category="error")
-      if len(quantity) < 1:
-        flash("You need to enter a quantity...", category='erorr')
       else:
         new_item = Item(name=item, quantity=quantity, user_id=current_user.id)
         db.session.add(new_item)

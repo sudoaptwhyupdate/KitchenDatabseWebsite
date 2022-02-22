@@ -1,6 +1,6 @@
 function deleteItem(itemId) {
   //sends a basic request to the back end
-  fetch('/deleteItem', {
+  fetch('/delete-item', {
     method: 'POST',
     body: JSON.stringify({ itemId: itemId })
   }).then((_res) => {
