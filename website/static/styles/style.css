@@ -2,14 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color:#F5CB5C;
   width: 100%;
 }
 
 nav {
   padding: 20px;
-  background-color: #333533;
-  color:#E8EDDF;    
   top: 0;
   display: grid;
   place-items: center;
@@ -22,14 +19,12 @@ nav {
 
 nav h1 {
   font-size: xx-large;
-  color: #E8EDDF;
 }
 
 /*do a hover for this*/
 nav ul {
   padding: 0;
   margin: 0;
-  color: #E8EDDF;
   font-size: large;
 }
 
@@ -48,7 +43,6 @@ nav li {
 a {
   padding: 15px;
   text-decoration: none;
-  color: #E8EDDF;
 }
 
 .bannerMessage {
@@ -57,22 +51,18 @@ a {
 
 .error_banner {
   font-size: large;
-  color: #E8EDDF;
   float: left;
   padding: 10px;
   text-align: center;
   width: 100%;
-  background-color: #81141485;
 }
 
 .success_banner {
   font-size: large;
-  color: #E8EDDF;
   float: left;
   padding: 20px;
   text-align: center;
   width: 100%;
-  background-color: #15a71580;
 }
 
 #showcase_paragraph {
