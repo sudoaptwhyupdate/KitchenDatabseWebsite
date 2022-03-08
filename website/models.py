@@ -15,6 +15,7 @@ class Item(db.Model):
   name = db.Column(db.String(10000))
   date = db.Column(db.DateTime(timezone=True), default=func.now())
   quantity = db.Column(db.String(1000))
+  priority = db.Column(db.Integer(5))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   
 # User object, handles email, password, and relationship to items that the person has
