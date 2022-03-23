@@ -3,6 +3,7 @@ from enum import unique
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from sqlalchemy.dialects import mysql 
 
 """
   Item Object, handles name of of item, the date it was last recorded, and the 
@@ -10,12 +11,13 @@ from sqlalchemy.sql import func
   
   One User many items
 """
+
 class Item(db.Model):
   id = db.Column(db.Integer, primary_key=True)
+  priority = db.Column(db.Boolean())
   name = db.Column(db.String(10000))
   date = db.Column(db.DateTime(timezone=True), default=func.now())
-  quantity = db.Column(db.String(1000))
-  priority = db.Column(db.Integer(5))
+  quantity = db.Column(db.String(10))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   
 # User object, handles email, password, and relationship to items that the person has

@@ -1,4 +1,3 @@
-from nis import cat
 from django.shortcuts import redirect
 from flask import Blueprint, request, flash, redirect, url_for
 from flask.templating import render_template

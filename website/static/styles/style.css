@@ -111,16 +111,72 @@ h1 {
 
 #items {
   text-align: center;
-  list-style-type: none;
-  font-size: large;
+  padding: 20px;
+  width: 75%;
+  margin: 0 auto;
 }
 
 #items li {
-  padding: 12px;
-  font-size: large;
+  padding: 50px;
+  background-color: #202121;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: calc(600px / 3);
+  display: inline-block;
+}
+
+#items button {
+  border-radius: 25%;
+  border-style: none;
+  font-size: larger;
 }
 
 hr {
   width: 80%;
   align-items: center;
+}
+
+footer {
+  text-align: center;
+  font-size: medium;
+  opacity: 60%;
+  padding: 50px;
+}
+
+/*mobile changes*/
+@media (max-width: 640px) {
+
+  nav {
+    width: 100%;
+    padding: 0;
+    place-content: left;
+    text-align: left;
+    display: block;
+  }
+
+  nav ul {
+    display: block;
+    padding: 5px;
+  }
+
+  nav li {
+    display: block;
+    padding:5px;
+  }
+
+  nav a {
+    padding: 0;
+  }
+
+  nav h1 {
+    font-size: medium;
+    display: block;
+    place-content: left;
+    text-align: left;
+    padding: 7px;
+  }
+
+  .form-group input {
+    width: 90%;
+  }
+
 }
