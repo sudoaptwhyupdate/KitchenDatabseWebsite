@@ -14,7 +14,6 @@ from sqlalchemy.dialects import mysql
 
 class Item(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  priority = db.Column(db.Boolean())
   name = db.Column(db.String(10000))
   date = db.Column(db.DateTime(timezone=True), default=func.now())
   quantity = db.Column(db.String(10))

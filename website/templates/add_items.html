@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Add Items{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+  <div class="form-group">
+    <label>Item name</label>
+    <input class="form-control"
+    type="text"
+    name="item"
+    id="item"
+    placeholder="Enter Item name... "/>
+  </div>
+  <div class="form-group">
+    <label>Item quantity</label>
+    <input class="form-control" 
+    type="text"
+    name="quantity"
+    id="quantity"
+    placeholder="Enter Item Quantity... "/>
+  </div>
+  </div>
+  <br>
+  <div align="center">
+    <button class="submit_button" type="submit">Add Item</button>
+  </div>
+</form>
+
+{% endblock %}

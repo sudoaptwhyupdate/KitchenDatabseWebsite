@@ -13,6 +13,41 @@ views = Blueprint('views', __name__)
 def home():
   return render_template("home.html", user=current_user)
 
+@login_required
+@views.route('/add_items', methods=['GET', 'POST'])
+def add_item():
+    if request.method == 'POST':
+      item = request.form.get('item')
+      quantity = request.form.get('quantity')
+             
+      # searching the database
+      item_database = Item.query.filter_by(name=item).first()
+      
+      # converting the quantity of items to int, sending a message if it has a letter in it
+      try:
+        if quantity == "":
+          flash("You need to enter a quantity", category='error')
+        else:
+          int(quantity)
+      except ValueError:
+        flash("You should enter your number as a quantity so that it is easier to read it later...", category='error')
+        return render_template("what_you_have.html", user=current_user)
+      
+      if item_database:
+        flash("You have already entered this item!", category='error')
+      elif len(item) < 1:
+        flash("You need to enter an item...", category="error")        
+      else:
+        new_item = Item(name=item, quantity=quantity, user_id=current_user.id)
+        db.session.add(new_item)
+        db.session.commit()
+        flash("Item Added", category='success')
+        
+        
+    return render_template("add_items.html", user=current_user)
+
+
+
 # page for displaying what is in the database
 @views.route('/what_you_have', methods=['GET', 'POST'])
 def what_you_have():

@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kitchen Datbase | {% block title %}{% endblock %}</title>
+    <title>Kitchen Database | {% block title %}{% endblock %}</title>
 
     <!-- main css -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
@@ -13,24 +13,16 @@
       <ul>
 
         {% if user.is_authenticated %}
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/logout">Logout</a>
-        </li>
-        <li>
-          <a href="/what_you_have">What you have</a>
-        </li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/what_you_have">What you have</a></li>
+        <li><a href="/add_items">Add Items</a></li>
 
         {% else %}
-        <li>
-          <a href="/login">Login</a>
-        </li>
-        <li>
-          <a href="/sign_up">Sign Up</a>
-        </li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/sign_up">Sign Up</a></li>
         {% endif %}
+
       </ul>
     </nav>
 
