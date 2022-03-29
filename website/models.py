@@ -5,12 +5,12 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 from sqlalchemy.dialects import mysql 
 
-"""
-  Item Object, handles name of of item, the date it was last recorded, and the 
-  quantity of that item
-  
-  One User many items
-"""
+
+#  Item Object, handles name of of item, the date it was last recorded, and the
+# quantity of that item
+#  
+# One User many items
+
 
 class Item(db.Model):
   id = db.Column(db.Integer, primary_key=True)

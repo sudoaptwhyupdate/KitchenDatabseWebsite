@@ -49,13 +49,12 @@ def logout():
 @auth.route('/sign_up', methods=["GET", "POST"])
 def sign_up():
   if request.method == 'POST':
-    # getting data from HTML form
     email = request.form.get('email')
     name = request.form.get('name')
     password1 = request.form.get('password')
     password2 = request.form.get('confirm_password')
     
-    # searching databse
+    # searching database
     user = User.query.filter_by(email=email).first()
     
     # some conditions for user login
@@ -74,7 +73,7 @@ def sign_up():
     else:
       # create a new user, add password with hashing
       new_user = User(email=email, user_name=name, password=generate_password_hash(password1, method='sha256'))
-      # add user to the databse and commit the changes
+      # add user to the database and commit the changes
       db.session.add(new_user)
       db.session.commit()
       flash("Accout created", category='success')

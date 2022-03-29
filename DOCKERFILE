@@ -1,4 +1,3 @@
-# find correct python image
 FROM jmsearcy/python3-flask
 
 WORKDIR /

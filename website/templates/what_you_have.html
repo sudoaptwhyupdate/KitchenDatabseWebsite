@@ -9,6 +9,10 @@
 <ul id="items">
   {% for item in user.items  %}
   <li>{{ item.name }} quantity: {{ item.quantity }}
+    <!-- Don't worry about the error your IDE gives about ({{ iten.id }}) 
+      it's meaningless and does not present errors later, it is proper
+      jinja
+    -->
     <button type="button" class="close" onClick="deleteItem({{ item.id }})">
       <span aria-hidden="true">&times;</span>
     </button>

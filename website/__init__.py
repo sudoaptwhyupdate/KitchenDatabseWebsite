@@ -10,6 +10,10 @@ DB_NAME = "database.db"
 
 def create_app():
   app = Flask(__name__)
+  
+  # make sure the change the secret key before putting this app online
+  # because this key is pushed to git and github
+  
   app.config['SECRET_KEY'] = "asdpf87iywuerfh*&^)(dfkjh|}{d;"
   app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{DB_NAME}"
   db.init_app(app)

@@ -36,7 +36,7 @@ def add_item():
       if item_database:
         flash("You have already entered this item!", category='error')
       elif len(item) < 1:
-        flash("You need to enter an item...", category="error")        
+        flash("You need to enter an item...", category="error")
       else:
         new_item = Item(name=item, quantity=quantity, user_id=current_user.id)
         db.session.add(new_item)
