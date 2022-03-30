@@ -9,20 +9,14 @@ class ValidateInput:
   
   # This is designed to be somewhat configureable
   # so that this code can be used in the future
-  # such as item length, and other stuff
-  
+  # such as item length, data type
+
   def __init__(
-      self, 
-      type, 
+      self,
+      data_type="int", 
       name="", 
       name_min=0,
       name_max=0,
-      password="", 
-      password_min=0, 
-      password_max=0,
-      item="", 
-      item_min=0,
-      item_max=0
   ):
     
 
@@ -31,29 +25,20 @@ class ValidateInput:
       # and this is clear enough
       # if there is a better way to write it please fix it
       #
-      # number_of_attempts_fixing_it = 3
+      # number_of_attempts_fixing_it = 4
       
-      self.type = type
+      self.data_type = data_type
       self.name = name
       self.name_min = name_min
       self.name_max = name_max
-      self.password = password
-      self.password_min = password_min
-      self.password_max = password_max
-      self.item = item
-      self.item_min = item_min
-      self.item_max = item_max
-      
-      if self.type == self.name:
-        self._len_check(self.name, self.name_min, self.name_max)
-      if self.type == self.password:
-        self._len_check(self.password, self.password_min, self.password_max)
-      if self.type == self.item:
-        self._len_check(self.item, self.item_min, self.item_max)
-  
+
   @classmethod
-  def _len_check(self, name, minimum, max):
-      if len(name) >= max or name <= minimum:
+  def _len_check(self, name, min, max):
+      if len(name) >= max or name <= min:
         return "error"
       else:
         return "success"
+
+  @classmethod
+  def _type_check(self, data_type):
+    pass
