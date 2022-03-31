@@ -1,9 +1,6 @@
 # input validation module to figure out if all things inputted by the user
 # are fine
 
-from flask import Flask
-
-
 class ValidateInput:
   
   # This is a simple input validation class
@@ -61,8 +58,10 @@ class ValidateInput:
       
   
   @classmethod
-  def len_check(self, name, min, max):
-      if len(name) >= max or name <= min:
+  def len_check(self, name, min=0, max=0):
+      if len(name) >= max:
+        return self.__error_message_generator(name, len(name), min, max)
+      elif len(name) <= min:
         return self.__error_message_generator(name, len(name), min, max)
       else:
         return "success"

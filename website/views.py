@@ -5,7 +5,7 @@ from .models import Item
 from . import db
 import json
 
-from input_validation import ValidateInput as vi
+from website.input_validation import ValidateInput as vi
 
 views = Blueprint('views', __name__)
 
@@ -19,22 +19,23 @@ def add_item():
     if request.method == 'POST':
       item = request.form.get('item')
       quantity = request.form.get('quantity')
-             
+
+      
       # searching the database
       item_database = Item.query.filter_by(name=item).first()
       
-      quantity_length = vi.len_check(quantity, 0, 100000000)
-      if quantity_length == "success":
-        pass
-      else:
-        flash("Enter a Quantity That is a Number!", category="error")
-      
-      # return render_template("what_you_have.html", user=current_user)
-      
+      quantity_length = vi.len_check(quantity, 0, 1000)
+      quantity_type = vi.type_check(quantity, "int")
+      item_length = vi.len_check(item, 2, 75)
+
       if item_database:
         flash("You have already entered this item!", category='error')
-      elif len(item) < 1:
-        flash("You need to enter an item...", category="error")
+      elif quantity_length != "success":
+        flash("You need to enter in a quantity", category="error")
+      elif quantity_type != "success":
+        flash("You need to enter in a number for a quantity!", category="error")
+      elif item_length != "success":
+        flash("Your item name need to be between 2 and 75 characters long!", category="error")
       else:
         new_item = Item(name=item, quantity=quantity, user_id=current_user.id)
         db.session.add(new_item)
