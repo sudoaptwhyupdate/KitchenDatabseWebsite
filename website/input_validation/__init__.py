@@ -14,18 +14,8 @@ class ValidateInput:
   # so that this code can be used in the future
   # such as item length, data type
 
-  def __init__(
-      self,
-      data_type="int", 
-      name="", 
-      name_min=0,
-      name_max=0,
-  ):
-      
-      self.data_type = data_type
-      self.name = name
-      self.name_min = name_min
-      self.name_max = name_max
+  def __init__(self):
+    pass
 
   def __error_message_generator(self, bad_data, length=0, minimum=0, exceeds=0, type=""):
     
@@ -71,13 +61,16 @@ class ValidateInput:
       
   
   @classmethod
-  def _len_check(self, name, min, max):
+  def len_check(self, name, min, max):
       if len(name) >= max or name <= min:
-        self.__error_message_generator(name, len(name), min, max)
-        return "error"
+        return self.__error_message_generator(name, len(name), min, max)
       else:
         return "success"
 
   @classmethod
-  def _type_check(self, data_type):
-    pass
+  def type_check(self, data, data_type):
+    if str(type(data)) == data_type:
+      return "success"
+    else:
+      self.__error_message_generator(data, data_type)
+      return "error"

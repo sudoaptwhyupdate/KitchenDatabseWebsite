@@ -5,7 +5,7 @@ from .models import Item
 from . import db
 import json
 
-import input_validation
+from input_validation import ValidateInput as vi
 
 views = Blueprint('views', __name__)
 
@@ -23,7 +23,12 @@ def add_item():
       # searching the database
       item_database = Item.query.filter_by(name=item).first()
       
-
+      quantity_length = vi.len_check(quantity, 0, 100000000)
+      if quantity_length == "success":
+        pass
+      else:
+        flash("Enter a Quantity That is a Number!", category="error")
+      
       # return render_template("what_you_have.html", user=current_user)
       
       if item_database:
