@@ -7,7 +7,7 @@ in or a barcode reader (coming soon). The items will come up in your "What you h
 
 If your editor gives you a problem with the file
 
-  /website/templates/what_you_have.html
+    /website/templates/what_you_have.html
 
 About some of the jinja templating, don't worry, ignore it.
 
