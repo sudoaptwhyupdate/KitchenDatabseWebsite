@@ -32,4 +32,9 @@ To use the module there are two functions that can be used from outside the modu
 Also to mention there is error_message_generator() which is private and only returns errors.
 It sits in there in case it is needed for something later, but for now it it not used and is so
 small it's not even worth removing from the project
-   
+
+## Secret Keys, and things that should normally be kept private
+
+If you check in __init__.py you will note that there is a SECRET_KEY variable
+which is to store a secret key for authentication in flask. Although normally this should
+not be leaked, it's going to be changed before it's hosted, so put whatever you want in there.
