@@ -21,7 +21,7 @@ To use the module there are two functions that can be used from outside the modu
 - "len_check" takes three arguments, name, min, and max. "Name" is what is getting checked, "min" is the minimum length, and "max" is the maximum length.
 - "type_check" takes two arguments: data and data_type. Data is the thing you want checked, data_type is is the type you're checking for. so an example instance would be:
 
-    type_check(variable_name, str)
+      type_check(variable_name, str)
 
 or
 
