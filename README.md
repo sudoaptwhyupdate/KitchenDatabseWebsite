@@ -12,3 +12,22 @@ If your editor gives you a problem with the file
 About some of the jinja templating, don't worry, ignore it.
 
 ## Input validation module
+
+To use the module there are two functions that can be used from outside the module:
+
+    len_check(name, min, max)
+    type_check(data, data_type)
+
+- "len_check" takes three arguments, name, min, and max. "Name" is what is getting checked, "min" is the minimum length, and "max" is the maximum length.
+- "type_check" takes two arguments: data and data_type. Data is the thing you want checked, data_type is is the type you're checking for. so an example instance would be:
+
+    type_check(variable_name, str)
+
+or
+
+    type_check(9087, int)
+
+
+Also to mention there is error_message_generator() which is private and only returns errors.
+It sits in there in case it is needed for something later, but for now it it not used and is so
+small it's not even worth removing from the project
