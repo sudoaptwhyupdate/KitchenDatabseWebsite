@@ -25,7 +25,7 @@ def add_item():
       item_database = Item.query.filter_by(name=item).first()
       
       quantity_length = vi.len_check(quantity, 0, 1000)
-      quantity_type = vi.type_check(quantity, "int")
+      quantity_type = vi.type_check(quantity, int)
       item_length = vi.len_check(item, 2, 75)
 
       if item_database:

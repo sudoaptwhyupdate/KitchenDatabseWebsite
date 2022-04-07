@@ -13,7 +13,8 @@ class ValidateInput:
 
   def __init__(self):
     pass
-
+  
+  # not needed in this project, just because of who it is getting returned to
   def __error_message_generator(self, bad_data, length=0, minimum=0, exceeds=0, types=""):
     
     if length == 0 and exceeds == 0:
@@ -68,7 +69,9 @@ class ValidateInput:
 
   @classmethod
   def type_check(self, data, data_type):
-    if isinstance("data", data_type) == True:
+    try:
+      data_type(data)
       return "success"
-    else:
+    except ValueError:
       return "error"
+
