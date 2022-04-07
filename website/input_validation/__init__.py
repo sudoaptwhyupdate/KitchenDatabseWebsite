@@ -14,7 +14,7 @@ class ValidateInput:
   def __init__(self):
     pass
 
-  def __error_message_generator(self, bad_data, length=0, minimum=0, exceeds=0, type=""):
+  def __error_message_generator(self, bad_data, length=0, minimum=0, exceeds=0, types=""):
     
     if length == 0 and exceeds == 0:
       type_problem = True
@@ -46,8 +46,8 @@ class ValidateInput:
     by the developer.
     
     Given Data: {bad_data}
-    Data Type Given: {type(bad_data)}
-    Data Type Requested: {type}
+    Data Type Given: {str(type(bad_data))}
+    Data Type Requested: {types}
     
     """
     
@@ -68,8 +68,7 @@ class ValidateInput:
 
   @classmethod
   def type_check(self, data, data_type):
-    if str(type(data)) == data_type:
+    if isinstance("data", data_type) == True:
       return "success"
     else:
-      self.__error_message_generator(data, data_type)
       return "error"
