@@ -23,9 +23,9 @@ To use the module there are two functions that can be used from outside the modu
 
       type_check(variable_name, str)
 
-or
+    or
 
-    type_check(9087, int)
+      type_check(9087, int)
 
 
 Also to mention there is error_message_generator() which is private and only returns errors.
