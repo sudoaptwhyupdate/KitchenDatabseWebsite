@@ -37,6 +37,11 @@ If your editor gives you a problem with the file
 
 About some of the jinja templating, don't worry, ignore it.
 
+## Getting Picture Files (only necessary if you NEED it)
+
+- Please make sure your are not wasting your bandwidth. The picture files are pictures of the items that will appear on screen with the list, so if you're not handling that you don't need to download them.
+- Use the dropbox link provided and then add the pictures to the static/images folder
+
 ## Input validation module
 
 To use the module there are two functions that can be used from outside the module:

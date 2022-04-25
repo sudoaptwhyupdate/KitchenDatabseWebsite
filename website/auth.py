@@ -1,12 +1,10 @@
 from django.shortcuts import redirect
-from flask import Blueprint, request, flash, redirect, url_for
-from flask.templating import render_template
+from flask import Blueprint, request, flash, redirect, url_for, render_template
 from . import db
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 
-import flask_login
 import re
 
 auth = Blueprint('auth', __name__)
@@ -76,6 +74,7 @@ def sign_up():
       # add user to the database and commit the changes
       db.session.add(new_user)
       db.session.commit()
+      login_user(new_user, remember=True)
       flash("Accout created", category='success')
       return redirect(url_for('views.home'))
 
