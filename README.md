@@ -42,6 +42,8 @@ About some of the jinja templating, don't worry, ignore it.
 - Please make sure your are not wasting your bandwidth. The picture files are pictures of the items that will appear on screen with the list, so if you're not handling that you don't need to download them.
 - Use the dropbox link provided and then add the pictures to the static/images folder
 
+    https://www.dropbox.com/sh/80w3gbdeywjg0b8/AAAq3aBqh0Vd0awEUntDqZGha?dl=0
+
 ## Input validation module
 
 To use the module there are two functions that can be used from outside the module:
