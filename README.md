@@ -17,7 +17,7 @@ in or a barcode reader (coming soon). The items will come up in your "What you h
 
 - In order to get started working on this project, you will need to make a clone of the project (make sure you are in the directory you want the project to be in):
 
-    git clone https://github.com/sudoaptwhyupdate/KitchenDatabseWebsite.git
+      git clone https://github.com/sudoaptwhyupdate/KitchenDatabseWebsite.git
 
 - Then, also make sure you have python installed so that you can run the project. You can go to the website or install it some other way. As long as the python version is higher than python 3.8.x
 - Now it's time to install dependencies/python modules. You are going to need flask and sqlalchemy
