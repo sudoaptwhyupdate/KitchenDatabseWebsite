@@ -5,3 +5,5 @@
 /website/database.db
 /LICENSE
 /scripts/setup
+.idea
+.idea/
