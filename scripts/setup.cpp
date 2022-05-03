@@ -3,7 +3,6 @@
 using namespace std;
 
 
-
 // using a C++ script because is it easier to have somthing that is a binary
 // so that anybody on any machine can run somthing like this to setup the 
 // project, just have to run this and the entire project will get setup

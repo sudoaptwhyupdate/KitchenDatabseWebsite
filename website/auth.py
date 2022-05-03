@@ -1,10 +1,12 @@
+from ast import Pass
 from django.shortcuts import redirect
 from flask import Blueprint, request, flash, redirect, url_for, render_template
 from . import db
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
-
+from website.input_validation import PasswordCheck
+from website.input_validation import ValidateInput
 import re
 
 auth = Blueprint('auth', __name__)
@@ -55,15 +57,19 @@ def sign_up():
     # searching database
     user = User.query.filter_by(email=email).first()
     
+    
+    check_password = PasswordCheck(password1, "medium")
+    check_email = ValidateInput.email_check(email)
+    
     # some conditions for user login
     if user:
-      flash("Email already exists", category="erorr")
-    elif len(email) < 4:
-      flash("Email muster be greater than four character", category='error')
-    elif len(email) == 0:
-      flash("Enter an email", category="error")
+      flash("Email already exists", category="error")
+    elif not check_email:
+      flash("You need to enter an email!", category='error')
     elif password1 != password2:
       flash("Your passwords do not match", category='error')
+    elif not check_password:
+      flash("You need to enter a strong password!", category='error')
     elif len(name) < 1:
       flash("Enter a name...", category="error")
     elif len(password1) < 7:
