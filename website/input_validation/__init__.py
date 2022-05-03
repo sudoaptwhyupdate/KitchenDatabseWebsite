@@ -1,6 +1,7 @@
 # input validation module to figure out if all things inputted by the user
 # are fine
 
+import string
 
 class PasswordCheck:
     # check if a password is secure enough
@@ -22,7 +23,7 @@ class PasswordCheck:
     
     # all other security levels after this will be multiplied by 2
     # to get to the next level
-  def __init__(self, password, security_level) -> None:
+  def __init__(self, password, security_level):
       self.password = password
       self.alphabetical_characters = 0
       self.numbers = 0
@@ -55,6 +56,22 @@ class PasswordCheck:
     for character in self.password:
       password_list.append(character)
     
+    alpha = 0
+    num = 0 
+    spec = 0
+    
+    for item in password_list:
+      if item in string.ascii_lowercase or string.ascii_uppercase:
+        alpha += 1
+      if item in string.digits:
+        num += 1
+      if item in string.punctuation:
+        spec += 1
+    
+    if (alpha == self.alphabetical_characters and num == self.numbers and 
+        spec == self.special_characters):
+      return "success"
+
 
 class ValidateInput:
   
@@ -62,7 +79,7 @@ class ValidateInput:
   # just to help clean up some of the code but can be used 
   # for other stuff as well
   
-  # This is designed to be somewhat configureable
+  # This is designed to be somewhat configureable`2`
   # so that this code can be used in the future
   # such as item length, data type
 
@@ -71,7 +88,7 @@ class ValidateInput:
   
       
   @classmethod
-  def len_check(self, name, min=0, max=0):
+  def len_check(self, name, min = 0, max = 0):
     # check the length of a given string
     # name = thing you're checking
     # min, min length wanted
