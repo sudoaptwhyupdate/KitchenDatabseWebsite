@@ -22,8 +22,9 @@ in or a barcode reader (coming soon). The items will come up in your "What you h
 - Then, also make sure you have python installed so that you can run the project. You can go to the website or install it some other way. As long as the python version is higher than python 3.8.x
 - Now it's time to install dependencies/python modules. You are going to need flask and sqlalchemy
 
-    pip install flask
-    pip install sqlalchemy
+        pip install flask
+    
+        pip install sqlalchemy
 
 - Now that you have the project cloned, made sure python was installed, and modules downloaded, you should be good to go, you can run the project.
 
@@ -39,7 +40,7 @@ About some of the jinja templating, don't worry, ignore it.
 
 ## Getting Picture Files (not necessary for operation)
 
-- NOTE!! These images are mot uploaded to dropbox yet, they will be soon but there are other, more important things that need to be worked on
+- NOTE!! These images are not uploaded to dropbox yet, they will be soon but there are other, more important things that need to be worked on
 - Please make sure your are not wasting your bandwidth. The picture files are pictures of the items that will appear on screen with the list, so if you're not handling that you don't need to download them.
 - Use the dropbox link provided and then add the pictures to the static/images folder
 
