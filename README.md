@@ -71,3 +71,7 @@ small it's not even worth removing from the project
 If you check in __init__.py you will note that there is a SECRET_KEY variable
 which is to store a secret key for authentication in flask. Although normally this should
 not be leaked, it's going to be changed before it's hosted, so put whatever you want in there.
+
+## Weird GIT stuff
+
+- I am really bad with git (as of now), so sometimes if you look at the tree, you might have a stroke, thats ok. Everything will get up to-date soon enough and with every branch merge I'm getting better.
