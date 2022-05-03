@@ -23,7 +23,7 @@ class PasswordCheck:
     
     # all other security levels after this will be multiplied by 2
     # to get to the next level
-  def __init__(self, password, security_level):
+  def __init__(self, password, security_level) -> None:
       self.password = password
       self.alphabetical_characters = 0
       self.numbers = 0
@@ -36,22 +36,34 @@ class PasswordCheck:
         self.alphabetical_characters = 8
         self.numbers = 2
         self.special_characters = 2
+        self.__check_password()
       elif security_level == "medium":
         self.alphabetical_characters = 16
         self.numbers = 4
         self.special_characters = 4
+        self.__check_password()
       elif security_level == "high":
         self.alphabetical_characters = 32
         self.numbers = 8
         self.special_characters = 8
+        self.__check_password()
       elif security_level == "very_high":
         self.alphabetical_characters = 64
         self.numbers = 16
         self.special_characters = 16
+        self.__check_password()
       else:
-        pass
+        self.alphabetical_characters = 8
+        self.numbers = 2
+        self.special_characters = 2
+        self.__check_password()
     
-  def __check_password__(self):
+  def __check_password(self):
+    """checks inputted password against criteria
+
+    Returns:
+        boolean: returns True or False, whether or not the function went well
+    """
     password_list = []
     for character in self.password:
       password_list.append(character)
@@ -70,7 +82,9 @@ class PasswordCheck:
     
     if (alpha == self.alphabetical_characters and num == self.numbers and 
         spec == self.special_characters):
-      return "success"
+      return True
+    else:
+      return False
 
 
 class ValidateInput:
@@ -86,22 +100,20 @@ class ValidateInput:
   def __init__(self):
     pass
   
-      
-  @classmethod
-  def len_check(self, name, min = 0, max = 0):
+
+  def len_check(name, min = 0, max = 0):
     # check the length of a given string
     # name = thing you're checking
     # min, min length wanted
     # max = max length wanted
       if len(name) >= max:
-        return "error"
+        return False
       elif len(name) <= min:
-        return "error"
+        return False
       else:
-        return "success"
+        return True
 
-  @classmethod
-  def type_check(self, data, data_type):
+  def type_check(data, data_type):
     # checks the type of a given variable against what is required
     
     # data = thing you're checking
@@ -111,11 +123,11 @@ class ValidateInput:
     # other wise it won't work
     try:
       data_type(data)
-      return "success"
+      return True
     except ValueError:
-      return "error"
+      return False
   
-  def email_check(self, email):
+  def email_check(email):
     # checks that the input entered is an email
     # is this is a wonky way, yes, but it works
     email_list = []
@@ -125,19 +137,19 @@ class ValidateInput:
     AtSignBool = False
     PeriodBool = False
     for items in email_list:
-      if email_list[items] == "@":
+      if items == "@":
         AtSignBool = True
       else: pass
     
     for items in email_list:
-      if email_list[items] == ".":
+      if items == ".":
         PeriodBool = True
       else: pass
     
     if AtSignBool == True and PeriodBool == True:
-      return "success"
+      return True
 
-  def secure_password_check(self, password, security_level):
+  def secure_password_check(password, security_level):
     # this method is here just for ease of use, but using the
     # class directly is preferred
     PasswordCheck(password, security_level)
