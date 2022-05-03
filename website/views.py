@@ -30,11 +30,11 @@ def add_item():
 
       if item_database:
         flash("You have already entered this item!", category='error')
-      elif quantity_length:
+      elif not quantity_length:
         flash("You need to enter in a quantity", category="error")
-      elif quantity_type:
+      elif not quantity_type:
         flash("You need to enter in a number for a quantity!", category="error")
-      elif item_length:
+      elif not item_length:
         flash("Your item name need to be between 2 and 75 characters long!", category="error")
       else:
         new_item = Item(name=item, quantity=quantity, user_id=current_user.id)
