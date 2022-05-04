@@ -1,4 +1,5 @@
 .vscode
+.vscode/
 /website/__pycache__/
 /website/input_validation/__pycache__/
 /website/static/images/

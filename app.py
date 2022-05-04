@@ -1,4 +1,3 @@
-from os import name
 from website import create_app
 
 # in __init__.py

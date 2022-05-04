@@ -66,7 +66,7 @@ def what_you_have():
 
 @views.route('/delete-item', methods=["POST"])
 def delete_item():
-  # will take request data from javascript JSON.strigify 
+  # will take request data from javascript JSON.jsonify 
   item = json.loads(request.data)
   itemId = item['itemId']
   item = Item.query.get(itemId)
