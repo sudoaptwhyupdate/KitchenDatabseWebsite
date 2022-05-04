@@ -7,7 +7,7 @@ in or a barcode reader (coming soon). The items will come up in your "What you h
 
 - If you're looking to get a quickstart, make sure the repository is downloaded and then go to /scripts. In there you will find 'setup', just run the file and the project answer a few questions and the project will get setup
 
-    ./setup
+      ./setup
 
 - Because of the vast number of linux distributions, support for Windows and Mac is only being added first. If you would like to add a setup script for your distribution, you are more than welcome to do so.
 
