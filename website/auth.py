@@ -1,5 +1,3 @@
-from ast import Pass
-from django.shortcuts import redirect
 from flask import Blueprint, request, flash, redirect, url_for, render_template
 from . import db
 from .models import User

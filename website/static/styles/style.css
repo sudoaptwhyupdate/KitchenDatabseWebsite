@@ -151,6 +151,7 @@ h1 {
 
 .card h3 {
   text-align: left;
+  word-wrap: break-word;
 }
 
 .card p {

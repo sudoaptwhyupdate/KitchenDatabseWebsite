@@ -1,4 +1,3 @@
-from aiohttp import request
 from flask import Blueprint, flash, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from .models import Item
