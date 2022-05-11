@@ -10,8 +10,12 @@ WORKDIR /KitchenDatabseWebsite
 # Copy the dependencies file to the working directory
 COPY requirements.txt .
 
+COPY JSrequirements.txt .
+
 # Install any dependencies
 RUN python3 -m pip install -r requirements.txt
+
+RUN mpn install JSrequirements.txt
 
 # Copy the content of the local src directory to the working directory
 COPY . .
