@@ -3,33 +3,6 @@
 This is the website that allows you to inventory everything in your home, via entering it
 in or a barcode reader (coming soon). The items will come up in your "What you have" page. The page is sorted by item priority and then by item quantity.
 
-## Getting started (auto-setup)
-
-- If you're looking to get a quickstart, make sure the repository is downloaded and then go to /scripts. In there you will find 'setup', just run the file and the project answer a few questions and the project will get setup
-
-      ./setup
-
-- Because of the vast number of linux distributions, support for Windows and Mac is only being added first. If you would like to add a setup script for your distribution, you are more than welcome to do so.
-
-## Getting Started (manual)
-
-- In case the auto setup script didn't work, there is the manual setup which will take just an extra second, but will work just as well.
-
-- In order to get started working on this project, you will need to make a clone of the project (make sure you are in the directory you want the project to be in):
-
-      git clone https://github.com/sudoaptwhyupdate/KitchenDatabseWebsite.git
-
-- Then, also make sure you have python installed so that you can run the project. You can go to the website or install it some other way. As long as the python version is higher than python 3.8.x
-- Now it's time to install dependencies/python modules. You are going to need flask and sqlalchemy
-
-        pip install flask
-    
-        pip install sqlalchemy
-
-- Now that you have the project cloned, made sure python was installed, and modules downloaded, you should be good to go, you can run the project.
-
-    python3 app.py
-
 ## Random error problems in editor
 
 If your editor gives you a problem with the file
