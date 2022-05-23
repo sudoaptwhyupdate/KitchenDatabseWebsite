@@ -25,11 +25,6 @@ class Item(db.Model):
   importance = db.Column(db.String(25))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   
-class UserSettings(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  setting1 = db.Column(db.Boolean())
-  setting1 = db.Column(db.Boolean())
-  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
   
 # User object, handles email, password, and relationship to items that the person has
 class User(db.Model, UserMixin):

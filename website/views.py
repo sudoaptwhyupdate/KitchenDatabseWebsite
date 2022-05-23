@@ -74,8 +74,3 @@ def delete_item():
       db.session.commit()
       return jsonify({})
     
-
-@login_required
-@views.route("/settings", methods=["GET", "POST"])
-def settings():
-  return render_template("settings.html", user=current_user)
