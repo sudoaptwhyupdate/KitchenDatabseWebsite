@@ -1,5 +1,7 @@
 from flask import Blueprint, flash, render_template, request, flash, jsonify
-from flask_login import login_required, current_user
+from flask_login import login_required, current_user, user_accessed
+
+from website.auth import login
 from .models import Item
 from . import db
 import json
@@ -44,8 +46,6 @@ def add_item():
         
     return render_template("add_items.html", user=current_user)
 
-
-
 # page for displaying what is in the database
 @views.route('/what_you_have', methods=['GET', 'POST'])
 def what_you_have():
@@ -64,8 +64,7 @@ def what_you_have():
     return render_template("what_you_have.html", user=current_user)
 
 @views.route('/delete-item', methods=["POST"])
-def delete_item():
-  # will take request data from javascript JSON.jsonify 
+def delete_item(): 
   item = json.loads(request.data)
   itemId = item['itemId']
   item = Item.query.get(itemId)
@@ -74,3 +73,9 @@ def delete_item():
       db.session.delete(item)
       db.session.commit()
       return jsonify({})
+    
+
+@login_required
+@views.route("/settings", methods=["GET", "POST"])
+def settings():
+  return render_template("settings.html", user=current_user)

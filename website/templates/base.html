@@ -8,12 +8,21 @@
     <!-- main css -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 
+    <!-- fontawesome-->
+    <script src="https://kit.fontawesome.com/2212472dbe.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
     <nav>
-      <h1>Kitchen <span class="highlight">Database</span></h1>
-      <ul>
+      {% if user.is_authenticated %}
+      <a href="/settings"><i class="fa-solid fa-gear"></i></a>
+      {% else %}
+        <!--Nothing-->
+      {% endif %}
 
+      <h1>Kitchen <span class="highlight">Database</span></h1>
+
+      <ul>
         {% if user.is_authenticated %}
         <li><a href="/">Home</a></li>
         <li><a href="/logout">Logout</a></li>
