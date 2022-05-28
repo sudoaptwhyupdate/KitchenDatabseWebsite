@@ -33,4 +33,3 @@ class User(db.Model, UserMixin):
   password = db.Column(db.String(150))
   user_name = db.Column(db.String(150))
   items = db.relationship('Item')
-  settings = db.relationship('UserSettings')

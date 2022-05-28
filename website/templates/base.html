@@ -3,7 +3,7 @@
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kitchen Database | {% block title %}{% endblock %}</title>
+    <title>Stocked Shelves | {% block title %}{% endblock %}</title>
 
     <!-- main css -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
@@ -20,7 +20,7 @@
         <!--Nothing-->
       {% endif %}
 
-      <h1>Kitchen <span class="highlight">Database</span></h1>
+      <h1 id="site_header">Stocked <span class="highlight">Shelves</span></h1>
 
       <ul>
         {% if user.is_authenticated %}

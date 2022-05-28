@@ -1,312 +1,80 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 100%;
-  background-color: #292929;
-  color: #ffffff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #F5F5F5;
 }
 
 nav {
-  background-color: #1e1e1e;
-  color: #f4f4f2;
-  padding: 20px;
-  display: grid;
-  place-items: center;
-  min-height: 70px;
-}
-
-nav i {
+  background-color: #303036;
   color: white;
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 23px;
-}
-
-nav i:hover {
-  font-size: 28px;
-  transform: rotate(360deg);
-  transition: 1s;
+  padding: 20px;
+  top: 0;
+  position: sticky;
+  border-bottom: 3px solid #30BCED;
 }
 
 nav h1 {
+  text-align: left;
+  float: left;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+nav li {
+  display: inline;
+  padding: 0px 20px 0px 20px;
+  font-size: larger;
+  font-weight: 600;
+}
+
+nav li:hover {
+  transition: .75s;
+  font-size: x-large;
+}
+
+nav a {
+  color: #F5F5F5;
+  text-decoration: none;
+}
+
+/* Start home page CSS*/
+
+.background_image_div {
+  background-image: url("../images/home_page.jpeg");
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#showcase_header {
+  padding: 30px;
+  font-family: cursive;
+  font-style: italic;
+  font-size: 48px;
+}
+
+#showcase_paragraph {
   font-size: xx-large;
 }
 
-/*do a hover for this*/
-nav ul {
-  padding: 0;
-  margin: 0;
-  font-size: large;
+#showcase_paragraph, #showcase_header{
+  text-align: center;
+  color: white;
 }
 
-/*
-remember that putting the display inline on the elements will make 
-it arranged horizontally and not vertically so that it can be placed 
-in the top bar
-*/
-
-nav li {
-  list-style: none;
-  display: inline;
+.our_purpose {
+  padding: 20px;
+  background-color: #F5F5F5;
 }
 
-/*make sure to set text color*/
-a {
-  padding: 15px;
-  text-decoration: none;
-  color: #fffd72db;
-  font-weight: bold;
-}
-
-/* All the stuff with banners, success and error */
-.bannerMessage {
-  padding: 10px;
-}
-
-.error_banner, .success_banner {
-  width: 100%;
-  font-size: large;
-  float: left;
-  padding: 10px;
-  opacity: 80%;
+#section_header {
   text-align: center;
 }
 
-.error_banner {
-  background-color: #bd423e;
-}
-
-.success_banner {
-  background: #51a143;
-}
-
-/* Stuff on forms and entries */
-
-#showcase_paragraph {
-  font-size: large;
-  text-align: center;
-  padding: 10px;
-}
-
-h1 {
-  text-align: center;
-}
-
-.form-group {
-  padding: 10px;
-  text-align: center;
-}
-
-.form-group label {
-  text-align: center;
-  display: block;
-  font-size: larger;
-  padding: 5px;
-}
-
-.form-group input {
-  width: 25%;
-  padding: 13px 20px;
-  margin: 8px 0;
-  font-size: medium;
-  box-sizing: border-box;
-  border-radius: 4px;
-  box-shadow:0 1px 2px #aaa;
-  border: none;
-}
-
-.form-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.form-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.form-switch .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.form-switch .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.form-switch input:checked + .slider {
-  background-color: #2196F3;
-}
-
-.form-switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-.form-switch input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.form-switch .slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.submit_button {
-  display: block;
-  margin: auto;
-  font-size: large;
-  padding: 15px;
-  border-radius: 10px;
-  border: none;
-  width: 200px;
-  background-color: #3afd44;
-  color: rgb(61, 61, 61);
-  text-align: center;
-}
-
-.submit_button:hover {
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
-  transition: .2;
-}
-
-/* Starting to handle the cards on the what you have page
-   page is for displaying what is in the database  */
-
-.card {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-  padding: 16px;
-  text-align: center;
-  background-color: #51a143e4;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-
-.card button {
-  border-radius: 7%;
-  border-style: none;
-  font-size: larger;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top:7;
-  padding-bottom: 7;
-}
-
-.card h3 {
-  text-align: left;
-  word-wrap: break-word;
-}
-
-.card p {
-  text-align: left;
-}
-
-hr {
-  width: 80%;
-  align-items: center;
-  border: 1px solid rgba(224, 223, 223, 0.816); 
-}
-
-footer {
-  text-align: center;
-  font-size: medium;
-  opacity: 60%;
-  padding: 50px;
-}
-
-/*handles mobile changes or small screen stuff*/
-@media (max-width: 640px) {
-  nav {
-    width: 100%;
-    padding: 0;
-    place-content: left;
-    text-align: left;
-    display: block;
-  }
-
-  nav ul {
-    display: block;
-    padding: 5px;
-  }
-
-  nav li {
-    display: block;
-    padding:5px;
-  }
-
-  nav a {
-    padding: 0;
-  }
-
-  nav h1 {
-    font-size: medium;
-    display: block;
-    place-content: left;
-    text-align: left;
-    padding: 7px;
-  }
-
-  .form-group input {
-    width: 90%;
-  }
-
-  .card {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  .card button {
-    width: 90%;
-  }
-
-  .container hr {
-    display: none;
-  }
-
-}
+/* End home page CSS */
