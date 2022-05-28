@@ -69,12 +69,58 @@ nav a {
 }
 
 .our_purpose {
-  padding: 20px;
+  padding: 50px;
   background-color: #F5F5F5;
 }
 
 #section_header {
   text-align: center;
+  font-size: 40px;
+}
+
+#purpose_left, #purpose_right {
+  width: 50%;
+  display: inline;
+  font-size: 30px;
+}
+
+#purpose_left {
+  float: left;
+  text-align: left;
+}
+
+#purpose_right {
+  float: right;
+  text-align: right;
 }
 
 /* End home page CSS */
+
+/* start form page CSS */
+
+.form-container {
+  position: fixed;
+  width: 340px;
+  height: 280px;
+  top: 50%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -170px;
+  border: 3px solid #303036;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.form_group label {
+  color: #555;
+  display: inline-block;
+  margin-left: 18px;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+/* End form page CSS */
