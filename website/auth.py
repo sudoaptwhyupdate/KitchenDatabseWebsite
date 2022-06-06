@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, request, flash, redirect, url_for, render_template
 from . import db
 from .models import User
@@ -83,3 +84,4 @@ def sign_up():
       return redirect(url_for('views.home'))
 
   return render_template("sign_up.html", user=current_user)
+      

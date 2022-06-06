@@ -1,19 +1,33 @@
 <html>
   <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kitchen Database | {% block title %}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stocked Shelves | {% block title %}{% endblock %}</title>
 
     <!-- main css -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles/style.css') }}"
+    />
 
+    <!-- fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/2212472dbe.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav>
-      <h1>Kitchen <span class="highlight">Database</span></h1>
-      <ul>
+      {% if user.is_authenticated %}
+      <a href="/settings"><i class="fa-solid fa-gear"></i></a>
+      {% else %}
+      <!--Nothing-->
+      {% endif %}
 
+      <h1 id="site_header"><a href="/">Stocked Shelves</a></h1>
+
+      <ul>
         {% if user.is_authenticated %}
         <li><a href="/">Home</a></li>
         <li><a href="/logout">Logout</a></li>
@@ -24,37 +38,25 @@
         <li><a href="/login">Login</a></li>
         <li><a href="/sign_up">Sign Up</a></li>
         {% endif %}
-
       </ul>
     </nav>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      {% for category, message in messages %}
-      {% if category == 'error' %}
-        <div class="error_banner" role="alert">
-          <div class="bannerMessgae">
-            {{ message }}
-          </div> 
-        </div>
-        {% else %}
-        <div class="success_banner" role="alert">
-          <div class="bannerMessgae">
-            {{ message }}
-          </div> 
-        </div>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-    {% endwith %}
-    
-    <div class="content">
-      {% block content %}
-      {% endblock %}
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="error_banner" role="alert">
+      <div class="bannerMessgae">{{ message }}</div>
     </div>
+    {% else %}
+    <div class="success_banner" role="alert">
+      <div class="bannerMessgae">{{ message }}</div>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <div class="content">{% block content %} {% endblock %}</div>
     <script
-    type="text/javascript"
-    src="{{ url_for('static', filename='index.js') }}"
-  ></script>
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
   </body>
 </html>
