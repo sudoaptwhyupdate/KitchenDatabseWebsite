@@ -176,3 +176,35 @@ nav a {
 .success_banner {
   background: #51a143;
 }
+
+/* Mobile CSS */
+
+@media (max-width: 640px) {
+
+  nav {
+    display: none;
+  }
+
+  #showcase_paragraph {
+    padding: 10px;
+  }
+
+  #purpose_left, #purpose_right {
+    width: 95%;
+    display: block;
+    font-size: 25px;
+    word-wrap: normal;
+    text-align: center;
+  }
+
+  #purpose_left {
+    float: none;
+    clear: both;
+  }
+
+  #purpose_right {
+    float: none;
+    clear:both;
+  }
+
+}
