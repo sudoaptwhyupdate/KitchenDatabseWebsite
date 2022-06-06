@@ -82,6 +82,7 @@ nav a {
   width: 50%;
   display: inline;
   font-size: 30px;
+  word-wrap: normal;
 }
 
 #purpose_left {
@@ -156,3 +157,22 @@ nav a {
 
 
 /* End form page CSS */
+
+/* success and error banners */
+
+.error_banner, .success_banner {
+  width: 100%;
+  font-size: large;
+  float: left;
+  padding: 10px;
+  opacity: 80%;
+  text-align: center;
+}
+
+.error_banner {
+  background-color: #bd423e;
+}
+
+.success_banner {
+  background: #51a143;
+}
