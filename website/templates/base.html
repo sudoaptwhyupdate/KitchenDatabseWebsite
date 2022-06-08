@@ -18,7 +18,7 @@
     ></script>
   </head>
   <body>
-    <nav>
+    <nav class="desktop">
       {% if user.is_authenticated %}
       <a href="/settings"><i class="fa-solid fa-gear"></i></a>
       {% else %}
@@ -45,15 +45,50 @@
     messages %} {% for category, message in messages %} {% if category ==
     'error' %}
     <div class="error_banner" role="alert">
-      <div class="bannerMessgae">{{ message }}</div>
+      <div class="bannerMessage">{{ message }}</div>
     </div>
     {% else %}
     <div class="success_banner" role="alert">
-      <div class="bannerMessgae">{{ message }}</div>
+      <div class="bannerMessagee">{{ message }}</div>
     </div>
     {% endif %} {% endfor %} {% endif %} {% endwith %}
 
     <div class="content">{% block content %} {% endblock %}</div>
+    <div class="mobile_bottom_bar">
+      <nav class="mobile">
+        <ul>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="/">Home</a>
+            <i class="fa-solid fa-house-blank"></i>
+          </li>
+          <li>
+            <a href="/logout">Logout</a>
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </li>
+          <li>
+            <a href="/what_you_have">Inventory</a>
+            <i class="fa-solid fa-database"></i>
+          </li>
+          <li>
+            <a href="/add_items">Add</a>
+            <i class="fa-solid fa-circle-plus"></i>
+          </li>
+
+          {% else %}
+          <li>
+            <a href="/login">Login</a>
+            <i class="fa-solid fa-right-to-bracket"></i>
+          </li>
+          <li>
+            <a href="/sign_up">Sign Up</a>
+            <i class="fa-solid fa-user-plus"></i>
+          </li>
+
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
     <script
       type="text/javascript"
       src="{{ url_for('static', filename='index.js') }}"

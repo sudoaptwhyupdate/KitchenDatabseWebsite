@@ -5,13 +5,17 @@ body {
   background-color: #F5F5F5;
 }
 
-nav {
+nav.desktop {
   background-color: #303036;
   color: white;
   padding: 20px;
   top: 0;
   position: sticky;
   border-bottom: 3px solid #30BCED;
+}
+
+nav.mobile {
+  display: none;
 }
 
 nav h1 {
@@ -181,8 +185,17 @@ nav a {
 
 @media (max-width: 640px) {
 
-  nav {
+  nav.desktop {
     display: none;
+  }
+
+  nav.mobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #303036;
+    overflow-x: auto;
   }
 
   #showcase_paragraph {
@@ -205,6 +218,10 @@ nav a {
   #purpose_right {
     float: none;
     clear:both;
+  }
+
+  .mobile_bottom_bar {
+    background-color: #303036;
   }
 
 }
