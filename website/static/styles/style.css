@@ -240,7 +240,7 @@ button.close {
 
 /* Mobile CSS */
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
 
   nav.desktop {
     display: none;
@@ -296,7 +296,8 @@ button.close {
   }
 
   .form-container {
-    width: 70%;
+    width: 90%;
+    padding: 20px;
   }
   
   .form-group {
