@@ -56,37 +56,40 @@
     <div class="content">{% block content %} {% endblock %}</div>
     <div class="mobile_bottom_bar">
       <nav class="mobile">
-        <ul>
-          {% if user.is_authenticated %}
-          <li>
-            <a href="/">Home</a>
-            <i class="fa-solid fa-house-blank"></i>
-          </li>
-          <li>
-            <a href="/logout">Logout</a>
-            <i class="fa-solid fa-right-from-bracket"></i>
-          </li>
-          <li>
-            <a href="/what_you_have">Inventory</a>
-            <i class="fa-solid fa-database"></i>
-          </li>
-          <li>
-            <a href="/add_items">Add</a>
-            <i class="fa-solid fa-circle-plus"></i>
-          </li>
+        {% if user.is_authenticated %}
+        <a href="/">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
 
-          {% else %}
-          <li>
-            <a href="/login">Login</a>
-            <i class="fa-solid fa-right-to-bracket"></i>
-          </li>
-          <li>
-            <a href="/sign_up">Sign Up</a>
-            <i class="fa-solid fa-user-plus"></i>
-          </li>
+        <a href="/logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
 
-          {% endif %}
-        </ul>
+        <a href="/what_you_have">
+          <i class="fa-solid fa-database"></i>
+          <span>Inventory</span>
+        </a>
+
+        <a href="/add_items">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span>Add</span>
+        </a>
+
+        {% else %}
+
+        <a href="/login">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <span>Login</span>
+        </a>
+
+        <a href="/sign_up">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Sign Up</span>
+        </a>
+
+        {% endif %}
       </nav>
     </div>
     <script
