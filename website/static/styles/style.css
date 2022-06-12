@@ -1,3 +1,7 @@
+* {
+ box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -181,6 +185,59 @@ nav a {
   background: #51a143;
 }
 
+/* INVENTORY CSS */
+
+/* Float four columns side by side */
+
+.item_header {
+  padding: 20px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  padding: 20px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.card h3 {
+  padding: 5px;
+}
+
+button.close {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #30BCED;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+/* END INVENTORY CSS */
+
+
 /* Mobile CSS */
 
 @media (max-width: 640px) {
@@ -236,6 +293,41 @@ nav a {
 
   .mobile_bottom_bar {
     background-color: #303036;
+  }
+
+  .form-container {
+    width: 70%;
+  }
+  
+  .form-group {
+    padding: 8px;
+  }
+
+  .column {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .row {
+    display: block;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    display: flex;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    place-content: center;
   }
 
 }
